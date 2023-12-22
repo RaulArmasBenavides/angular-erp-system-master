@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ScheduleComponent} from './components/schedule/schedule.component'
+import {ScheduleComponent} from './components/events/schedule/schedule.component'
 import {LeaveComponent} from './components/leave/leave.component'
-import {NotificationComponent} from './components/notification/notification.component'
-import { MeetingsComponent } from './components/meetings/meetings.component';
-import { NotificationListComponent } from './components/notification-list/notification-list.component';
+import {NotificationComponent} from './components/notifications/notification/notification.component'
+import { MeetingsComponent } from './components/events/meetings/meetings.component';
+import { NotificationListComponent } from './components/notifications/notification-list/notification-list.component';
 import { AuthComponent } from './auth/auth.component';
 import { SyllabusComponent } from './components/syllabus/syllabus.component';
 import { SyllabusListComponent } from './components/syllabus-list/syllabus-list.component';
