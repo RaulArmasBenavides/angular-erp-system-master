@@ -39,7 +39,15 @@ export class EseSchedulerComponent implements OnInit {
   displayedColumns: string[] = ['Pattern', 'Subject Code', 'Subject Name', 'Date', 'Time'];
   add() {
     if(this.subjectCode.value && this.pattern.value && this.subjectName.value && this.date || this.time) {
-      this.dataSource = [...this.dataSource, {subjectCode: this.subjectCode.value, subjectName: this.subjectName.value, pattern: this.pattern.value, date: new Date(this.date.value).toLocaleDateString(), time: this.time.value}]
+      const dateValue = this.date.value ? new Date(this.date.value).toLocaleDateString() : '';
+
+      this.dataSource = [...this.dataSource, {
+        subjectCode: this.subjectCode.value,
+        subjectName: this.subjectName.value,
+        pattern: this.pattern.value,
+        date: dateValue, // Usa la fecha convertida o una cadena vacía si this.date.value es null
+        time: this.time.value
+      }];
       this.subjectCode.reset()
       this.subjectName.reset()
       this.pattern.reset()

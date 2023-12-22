@@ -67,11 +67,25 @@ export class EseListComponent implements OnInit {
   }
   add() {
     if(this.subjectCode.value && this.pattern.value && this.subjectName.value && this.date || this.time) {
-      this.dataSource = [...this.dataSource, {subjectCode: this.subjectCode.value, subjectName: this.subjectName.value, pattern: this.pattern.value, date: new Date(this.date.value).toLocaleDateString(), time: this.time.value}]
+      let formattedDate = '';
+      if (this.date.value) {
+        const tempDate = new Date(this.date.value);
+        if (!isNaN(tempDate.getTime())) { // Verificar si tempDate es una fecha válida
+          formattedDate = tempDate.toLocaleDateString();
+        }
+      }
+      
+      this.dataSource = [...this.dataSource, {
+        subjectCode: this.subjectCode.value,
+        subjectName: this.subjectName.value,
+        pattern: this.pattern.value,
+        date: formattedDate, // Usa la fecha formateada o una cadena vacía si this.date.value es inválido
+        time: this.time.value
+      }];
       this.subjectCode.reset()
       this.subjectName.reset()
       this.pattern.reset()
-      this.date.setValue(new Date())
+      this.date.setValue(new Date().toISOString())
       this.time.setValue(`${new Date().getHours().toString()}:${new Date().getMinutes().toString()}`)
     }
   }
