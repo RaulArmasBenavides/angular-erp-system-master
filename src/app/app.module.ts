@@ -16,9 +16,9 @@ import { NotificationListComponent } from './components/notifications/notificati
 import { AuthComponent } from './auth/auth.component';
 import { SyllabusComponent } from './components/syllabus/syllabus.component';
 import { SyllabusListComponent } from './components/syllabus-list/syllabus-list.component';
-import { EseSchedulerComponent } from './components/ese-scheduler/ese-scheduler.component';
-import { EseListComponent } from './components/ese-list/ese-list.component';
-import { CieEntryComponent } from './components/cie-entry/cie-entry.component';
+import { EseSchedulerComponent } from './components/exams/ese-scheduler/ese-scheduler.component';
+import { EseListComponent } from './components/exams/ese-list/ese-list.component';
+import { CieEntryComponent } from './components/exams/cie-entry/cie-entry.component';
 import { CieMarksListComponent } from './components/cie-marks-list/cie-marks-list.component';
 
 @NgModule({

@@ -1,0 +1,62 @@
+<div class="container card-rec" *ngIf="!reset">
+    <div class="row">
+      <div class="col s12 m12 l12 form ">
+        <div class="card horizontal">
+          <div class="card-stacked">
+            <form [formGroup]="_formPassword" (ngSubmit)="resetPassword()" name="formCad.form.valid">
+              <div class="card-content">
+                <div class="header-mark"></div>
+                <div class="logo">
+                  <img src="./assets/Makon.png" alt="grupo hunt logo" srcset="">
+                </div>
+                <div class="title-card">
+                  <h3>Cambio de contraseña</h3>
+                  <p>Por favor digite su nueva contraseña</p>
+                </div>
+                <div class="row inputs">
+                  <div class="col s12 input-field">
+                    <input id="password" type="password" class="validate" formControlName="password" >
+                    <label for="password">Contraseña</label>
+                  </div>
+                  <div class="col s12 input-field">
+                    <input id="c_password" type="password" class="validate" formControlName="c_password">
+                    <label for="c_password">Confirmar Contraseña</label>
+                    <span *ngIf="_formPassword.getError('passwordNotEqual',['c_password']) as error" style="color: red">Senhas diferentes</span>
+                  </div>
+                </div>
+  
+              </div>
+              <div class="card-action">
+                <!-- <input type="submit" [disabled]="!_formPassword.valid" value="Salvar"> -->
+                <input type="submit" value="Salvar">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container card-rec" *ngIf="reset">
+    <div class="row">
+      <div class="col s12 m12 l12 form ">
+        <div class="card horizontal">
+          <div class="card-stacked">
+            <div class="card-content">
+              <div class="header-mark"></div>
+              <div class="logo">
+                <img src="./assets/grupohunt.png" alt="grupo hunt logo" srcset="">
+              </div>
+              <div class="title-card">
+                <h3>Recuperação de Senha</h3>
+                <p [ngStyle]="{'color': back === true || expire_in === true ? 'red':''}" >{{ message }}</p>
+              </div>
+            </div>
+            <div class="card-action" *ngIf="back">
+              <a (click)="back_form()">Voltar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
