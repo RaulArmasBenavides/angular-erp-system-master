@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EseSchedulerService } from 'src/app/services/ese-scheduler.service';
+import { EseSchedulerService } from 'src/app/core/services/ese-scheduler.service';
 import { FormControl } from '@angular/forms';
 import { department, divs, faculty, programs, schools, semesters, subjects, year } from 'src/app/data';
 import { Router } from '@angular/router';

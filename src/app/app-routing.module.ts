@@ -5,7 +5,7 @@ import {LeaveComponent} from './components/leave/leave.component'
 import {NotificationComponent} from './components/notification/notification.component'
 import { MeetingsComponent } from './components/meetings/meetings.component';
 import { NotificationListComponent } from './components/notification-list/notification-list.component';
-import { AuthComponent } from './components/auth/auth.component';
+import { AuthComponent } from './auth/auth.component';
 import { SyllabusComponent } from './components/syllabus/syllabus.component';
 import { SyllabusListComponent } from './components/syllabus-list/syllabus-list.component';
 import { EseSchedulerComponent } from './components/ese-scheduler/ese-scheduler.component';

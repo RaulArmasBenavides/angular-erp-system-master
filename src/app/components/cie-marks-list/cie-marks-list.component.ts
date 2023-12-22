@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { department, divs, faculty, programs, schools, semesters, subjects, year } from 'src/app/data';
-import { CieEntryService } from 'src/app/services/cie-entry.service';
+import { CieEntryService } from 'src/app/core/services/cie-entry.service';
 @Component({
   selector: 'app-cie-marks-list',
   templateUrl: './cie-marks-list.component.html',
