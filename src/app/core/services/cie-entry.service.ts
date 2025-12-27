@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CieEntryService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   addCieEntry(data:any) {
     return this.http.post('http://localhost:8000/api/cie-marks', { ...data });

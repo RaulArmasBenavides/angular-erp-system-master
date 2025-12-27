@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class AuthServiceService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   login(creds:any):Observable<any> {
     return this.http.post('http://localhost:8000/api/users/login', {

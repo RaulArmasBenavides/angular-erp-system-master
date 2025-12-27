@@ -10,7 +10,7 @@ import { Emitters } from 'src/app/Emitters';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private readonly router: Router) { }
   isLoggedIn:any = false;
   ngOnInit(): void {
     Emitters.authEmitter.subscribe(
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
       }
     );
   }
-  logout() {
+  logout(): void {
     localStorage.removeItem('token');
     Emitters.authEmitter.emit(false);
   }

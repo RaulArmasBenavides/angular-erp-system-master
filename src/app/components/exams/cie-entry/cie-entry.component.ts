@@ -38,7 +38,7 @@ export class CieEntryComponent implements OnInit {
   }
 
 
-  add() {
+  add(): void {
     this.dataSource = [...this.dataSource, {
       prn: '', srn: '', totalCie: 0, studentName: '', cie1: 0, cie2: 0, cie3: 0
     }]
@@ -46,7 +46,7 @@ export class CieEntryComponent implements OnInit {
   convertToNumber(a:any, b:any, c:any) {
     return parseInt(a) + parseInt(b) + parseInt(c)
   }
-  announceSortChange(e:any) {
+  announceSortChange(e:any): void {
     console.log(e);
     
     if(e.direction === 'asc') {
@@ -69,7 +69,7 @@ export class CieEntryComponent implements OnInit {
     }
     
   }
-  saveData() {
+  saveData() : void{
     const department = this.departmentControl.value
     const faculty = this.facultyControl.value
     const program = this.programControl.value

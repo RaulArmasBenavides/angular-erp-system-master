@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EseSchedulerService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
   addEseSchedule(data:any):Observable<any> {
     return this.http.post('http://localhost:8000/api/ese-schedule', { ...data });
   }

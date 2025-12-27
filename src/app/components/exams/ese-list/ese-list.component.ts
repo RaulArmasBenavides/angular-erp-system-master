@@ -42,7 +42,7 @@ export class EseListComponent implements OnInit {
   showEditModal:any = false
 
   currentId = null;
-  constructor(private ese: EseSchedulerService, private router: Router) { }
+  constructor(private readonly ese: EseSchedulerService, private  readonly router: Router) { }
 
   ngOnInit(): void {
     this.ese.getEseSchedule().subscribe(data => {
@@ -50,7 +50,7 @@ export class EseListComponent implements OnInit {
     })
   }
 
-  onEditClick(item:any) {
+  onEditClick(item:any): void {
     console.log(item);
     
     this.departmentControl.setValue(item.department)
@@ -65,7 +65,7 @@ export class EseListComponent implements OnInit {
     this.currentId = item._id;
     this.showEditModal = true;
   }
-  add() {
+  add(): void {
     if(this.subjectCode.value && this.pattern.value && this.subjectName.value && this.date || this.time) {
       let formattedDate = '';
       if (this.date.value) {
@@ -89,13 +89,13 @@ export class EseListComponent implements OnInit {
       this.time.setValue(`${new Date().getHours().toString()}:${new Date().getMinutes().toString()}`)
     }
   }
-  deleteEse(id:any){
+  deleteEse(id:any) : void{
     this.ese.deleteEseSchedule(id).subscribe(data => {
       alert(data.message)
       window.location.reload();
     })
   }
-  saveData() {
+  saveData() : void{
     const department = this.departmentControl.value
     const faculty = this.facultyControl.value
     const program = this.programControl.value
@@ -127,7 +127,7 @@ export class EseListComponent implements OnInit {
       window.location.reload();
     })
   }
-  closeModal() {
+  closeModal() : void{
     this.currentId = null;
     this.showEditModal = null;
   }
