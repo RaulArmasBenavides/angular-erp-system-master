@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "erp-system:build:production"
+              "buildTarget": "erp-system:build:production"
             },
             "development": {
-              "browserTarget": "erp-system:build:development"
+              "buildTarget": "erp-system:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "erp-system:build"
+            "buildTarget": "erp-system:build"
           }
         },
         "test": {
