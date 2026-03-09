@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { HeaderComponent } from './shared/header/header.component';
 import { ScheduleComponent } from './components/events/schedule/schedule.component';
@@ -21,32 +21,25 @@ import { EseListComponent } from './components/exams/ese-list/ese-list.component
 import { CieEntryComponent } from './components/exams/cie-entry/cie-entry.component';
 import { CieMarksListComponent } from './components/cie-marks-list/cie-marks-list.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ScheduleComponent,
-    NotificationComponent,
-    MeetingsComponent,
-    NotificationListComponent,
-    AuthComponent,
-    SyllabusComponent,
-    SyllabusListComponent,
-    EseSchedulerComponent,
-    EseListComponent,
-    CieEntryComponent,
-    CieMarksListComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    MaterialModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeaderComponent,
+        ScheduleComponent,
+        NotificationComponent,
+        MeetingsComponent,
+        NotificationListComponent,
+        AuthComponent,
+        SyllabusComponent,
+        SyllabusListComponent,
+        EseSchedulerComponent,
+        EseListComponent,
+        CieEntryComponent,
+        CieMarksListComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
