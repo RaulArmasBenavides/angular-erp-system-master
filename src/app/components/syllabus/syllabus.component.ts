@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { department, divs, faculty, programs, schools, year } from 'src/app/data';
 import { SyllabusService } from 'src/app/syllabus.service';
 @Component({
-	selector: 'app-syllabus',
-	templateUrl: './syllabus.component.html',
-	styleUrls: ['./syllabus.component.css']
+    selector: 'app-syllabus',
+    templateUrl: './syllabus.component.html',
+    styleUrls: ['./syllabus.component.css'],
+    standalone: false
 })
 export class SyllabusComponent implements OnInit {
 	departments = department;

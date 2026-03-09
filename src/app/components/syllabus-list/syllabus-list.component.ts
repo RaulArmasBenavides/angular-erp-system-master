@@ -4,9 +4,10 @@ import { department, divs, faculty, programs, schools, year } from 'src/app/data
 import { FormControl } from '@angular/forms';
 
 @Component({
-	selector: 'app-syllabus-list',
-	templateUrl: './syllabus-list.component.html',
-	styleUrls: ['./syllabus-list.component.css']
+    selector: 'app-syllabus-list',
+    templateUrl: './syllabus-list.component.html',
+    styleUrls: ['./syllabus-list.component.css'],
+    standalone: false
 })
 export class SyllabusListComponent implements OnInit {
 	constructor(private readonly syllabusService: SyllabusService) {}

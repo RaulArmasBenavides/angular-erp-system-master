@@ -3,9 +3,10 @@ import { FormControl } from '@angular/forms';
 import { department, divs, faculty, programs, schools, semesters, subjects, year } from 'src/app/data';
 import { CieEntryService } from 'src/app/core/services/cie-entry.service';
 @Component({
-	selector: 'app-cie-marks-list',
-	templateUrl: './cie-marks-list.component.html',
-	styleUrls: ['./cie-marks-list.component.css']
+    selector: 'app-cie-marks-list',
+    templateUrl: './cie-marks-list.component.html',
+    styleUrls: ['./cie-marks-list.component.css'],
+    standalone: false
 })
 export class CieMarksListComponent implements OnInit {
 	cieEntries: any = null;

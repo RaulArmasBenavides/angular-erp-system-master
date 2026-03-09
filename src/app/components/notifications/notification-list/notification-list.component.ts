@@ -4,9 +4,10 @@ import { FormControl, FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { department, divs, faculty, programs, year, schools, students } from 'src/app/data';
 
 @Component({
-	selector: 'app-notification-list',
-	templateUrl: './notification-list.component.html',
-	styleUrls: ['./notification-list.component.css']
+    selector: 'app-notification-list',
+    templateUrl: './notification-list.component.html',
+    styleUrls: ['./notification-list.component.css'],
+    standalone: false
 })
 export class NotificationListComponent implements OnInit {
 	form: any;

@@ -5,9 +5,10 @@ import { department, divs, faculty, programs, schools, semesters, subjects, year
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-ese-list',
-  templateUrl: './ese-list.component.html',
-  styleUrls: ['./ese-list.component.css']
+    selector: 'app-ese-list',
+    templateUrl: './ese-list.component.html',
+    styleUrls: ['./ese-list.component.css'],
+    standalone: false
 })
 export class EseListComponent implements OnInit {
   eseSchedules = null;

@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { EseSchedulerService } from 'src/app/core/services/ese-scheduler.service';
 
 @Component({
-	selector: 'app-ese-scheduler',
-	templateUrl: './ese-scheduler.component.html',
-	styleUrls: ['./ese-scheduler.component.css']
+    selector: 'app-ese-scheduler',
+    templateUrl: './ese-scheduler.component.html',
+    styleUrls: ['./ese-scheduler.component.css'],
+    standalone: false
 })
 export class EseSchedulerComponent implements OnInit {
 	departments = department;

@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-	selector: 'app-recoverpass',
-	templateUrl: './recoverpass.component.html',
-	styleUrls: ['./recoverpass.component.css']
+    selector: 'app-recoverpass',
+    templateUrl: './recoverpass.component.html',
+    styleUrls: ['./recoverpass.component.css'],
+    standalone: false
 })
 export class RecoverpassComponent implements OnInit {
 	// private _user: User;

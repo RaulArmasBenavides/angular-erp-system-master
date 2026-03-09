@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { Emitters } from 'src/app/Emitters';
 
 @Component({
-	selector: 'app-auth',
-	templateUrl: './auth.component.html',
-	styleUrls: ['./auth.component.css']
+    selector: 'app-auth',
+    templateUrl: './auth.component.html',
+    styleUrls: ['./auth.component.css'],
+    standalone: false
 })
 export class AuthComponent implements OnInit {
 	constructor(

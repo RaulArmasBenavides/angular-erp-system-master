@@ -5,9 +5,10 @@ import { department, divs, faculty, programs, schools, semesters, subjects, year
 import { CieEntryService } from 'src/app/core/services/cie-entry.service';
 
 @Component({
-  selector: 'app-cie-entry',
-  templateUrl: './cie-entry.component.html',
-  styleUrls: ['./cie-entry.component.css']
+    selector: 'app-cie-entry',
+    templateUrl: './cie-entry.component.html',
+    styleUrls: ['./cie-entry.component.css'],
+    standalone: false
 })
 export class CieEntryComponent implements OnInit {
   departments = department;

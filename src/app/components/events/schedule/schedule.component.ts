@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { department, divs, faculty, programs, students, year } from 'src/app/data';
 
 @Component({
-	selector: 'app-schedule',
-	templateUrl: './schedule.component.html',
-	styleUrls: ['./schedule.component.css']
+    selector: 'app-schedule',
+    templateUrl: './schedule.component.html',
+    styleUrls: ['./schedule.component.css'],
+    standalone: false
 })
 export class ScheduleComponent implements OnInit {
 	// options

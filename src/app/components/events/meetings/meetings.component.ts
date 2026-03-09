@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { department, divs, faculty, programs, students, year } from 'src/app/data';
 
 @Component({
-	selector: 'app-meetings',
-	templateUrl: './meetings.component.html',
-	styleUrls: ['./meetings.component.css']
+    selector: 'app-meetings',
+    templateUrl: './meetings.component.html',
+    styleUrls: ['./meetings.component.css'],
+    standalone: false
 })
 export class MeetingsComponent implements OnInit {
 	meetings = null;

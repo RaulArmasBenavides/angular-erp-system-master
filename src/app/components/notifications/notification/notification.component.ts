@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { department, divs, faculty, programs, year, schools, students } from 'src/app/data';
 
 @Component({
-	selector: 'app-notification',
-	templateUrl: './notification.component.html',
-	styleUrls: ['./notification.component.css']
+    selector: 'app-notification',
+    templateUrl: './notification.component.html',
+    styleUrls: ['./notification.component.css'],
+    standalone: false
 })
 export class NotificationComponent implements OnInit {
 	departments = department;
