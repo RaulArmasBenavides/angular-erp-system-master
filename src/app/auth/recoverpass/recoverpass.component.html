@@ -1,4 +1,5 @@
-<div class="container card-rec" *ngIf="!reset">
+@if (!reset) {
+<div class="container card-rec">
 	<div class="row">
 		<div class="col s12 m12 l12 form">
 			<div class="card horizontal">
@@ -21,7 +22,9 @@
 								<div class="col s12 input-field">
 									<input id="c_password" type="password" class="validate" formControlName="c_password" />
 									<label for="c_password">Confirmar Contraseña</label>
-									<span *ngIf="_formPassword.getError('passwordNotEqual',['c_password']) as error" style="color: red">Senhas diferentes</span>
+									@if (_formPassword.getError('passwordNotEqual',['c_password']); as error) {
+									<span style="color: red">Senhas diferentes</span>
+									}
 								</div>
 							</div>
 						</div>
@@ -35,8 +38,8 @@
 		</div>
 	</div>
 </div>
-
-<div class="container card-rec" *ngIf="reset">
+} @if (reset) {
+<div class="container card-rec">
 	<div class="row">
 		<div class="col s12 m12 l12 form">
 			<div class="card horizontal">
@@ -51,11 +54,14 @@
 							<p [ngStyle]="{'color': back === true || expire_in === true ? 'red':''}">{{ message }}</p>
 						</div>
 					</div>
-					<div class="card-action" *ngIf="back">
+					@if (back) {
+					<div class="card-action">
 						<a (click)="back_form()">Voltar</a>
 					</div>
+					}
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+}

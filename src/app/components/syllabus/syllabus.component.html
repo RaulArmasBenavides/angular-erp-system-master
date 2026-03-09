@@ -10,19 +10,25 @@
 			<mat-form-field appearance="fill">
 				<mat-label>Department</mat-label>
 				<mat-select [formControl]="departmentControl">
-					<mat-option *ngFor="let option of departments | async" [value]="option.name"> {{option.name}} </mat-option>
+					@for (option of departments | async; track option) {
+					<mat-option [value]="option.name"> {{option.name}} </mat-option>
+					}
 				</mat-select>
 			</mat-form-field>
 			<mat-form-field appearance="fill">
 				<mat-label>Faculty</mat-label>
 				<mat-select [formControl]="facultyControl">
-					<mat-option *ngFor="let option of faculties | async" [value]="option.name"> {{option.name}} </mat-option>
+					@for (option of faculties | async; track option) {
+					<mat-option [value]="option.name"> {{option.name}} </mat-option>
+					}
 				</mat-select>
 			</mat-form-field>
 			<mat-form-field appearance="fill">
 				<mat-label>Program</mat-label>
 				<mat-select [formControl]="programControl">
-					<mat-option *ngFor="let option of programs | async" [value]="option.name"> {{option.name}} </mat-option>
+					@for (option of programs | async; track option) {
+					<mat-option [value]="option.name"> {{option.name}} </mat-option>
+					}
 				</mat-select>
 			</mat-form-field>
 			<br />
@@ -30,19 +36,25 @@
 			<mat-form-field appearance="fill">
 				<mat-label>Year</mat-label>
 				<mat-select [formControl]="yearControl">
-					<mat-option *ngFor="let option of years | async" [value]="option.name"> {{option.name}} </mat-option>
+					@for (option of years | async; track option) {
+					<mat-option [value]="option.name"> {{option.name}} </mat-option>
+					}
 				</mat-select>
 			</mat-form-field>
 			<mat-form-field appearance="fill">
 				<mat-label>Divisions</mat-label>
 				<mat-select [formControl]="divisionControl">
-					<mat-option *ngFor="let option of divisions | async" [value]="option.name"> {{option.name}} </mat-option>
+					@for (option of divisions | async; track option) {
+					<mat-option [value]="option.name"> {{option.name}} </mat-option>
+					}
 				</mat-select>
 			</mat-form-field>
 			<mat-form-field appearance="fill">
 				<mat-label>Schools</mat-label>
 				<mat-select [formControl]="schoolControl">
-					<mat-option *ngFor="let option of schools | async" [value]="option.name"> {{option.name}} </mat-option>
+					@for (option of schools | async; track option) {
+					<mat-option [value]="option.name"> {{option.name}} </mat-option>
+					}
 				</mat-select>
 			</mat-form-field>
 			<br />
@@ -65,12 +77,12 @@
 			<button (click)="add()" mat-raised-button color="primary">Add Syllabus</button>
 		</form>
 		<br /><br />
-		<table *ngIf="dataSource.length" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+		@if (dataSource.length) {
+		<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 			<ng-container matColumnDef="Unit">
 				<th mat-header-cell *matHeaderCellDef>Unit</th>
 				<td mat-cell *matCellDef="let element">{{element.unit}}</td>
 			</ng-container>
-
 			<ng-container matColumnDef="Details">
 				<th mat-header-cell *matHeaderCellDef>Details</th>
 				<td mat-cell *matCellDef="let element">{{element.details}}</td>
@@ -78,6 +90,7 @@
 			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 			<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 		</table>
+		}
 		<br /><br />
 		<button (click)="saveData()" mat-raised-button color="primary">Save data</button>
 	</mat-card>
